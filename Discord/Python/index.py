@@ -4,16 +4,16 @@ import discord
 from discord.ext import commands
 
 # JSON load
-def load_db():
-    with open("db.json") as db:
-        return json.load(db)
+#def load_db():
+#    with open("db.json") as db:
+#        return json.load(db)
     
 # Load database
-db = load_db()
+#db = load_db()
 
 # Bot declaration
 client = discord.Client()
-bot = commands.Bot(command_prefix='$')
+#bot = commands.Bot(command_prefix='$')
 
 @bot.command()
 async def test(ctx, arg):
@@ -30,6 +30,9 @@ async def on_message(message):
 
     if message.content.startswith('!help'):
         await message.channel.send('Commands:')
+    
+    if message.content.startswith('!Appointment'):
+        await message.channel.send('Appointment Schedule')
         
-#client.run(db['token'])
-bot.run(db["token"])
+client.run(db['token'])
+#bot.run(db["token"])
