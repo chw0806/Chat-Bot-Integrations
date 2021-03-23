@@ -25,7 +25,7 @@
       message.reply('What date would you like to schedule for? Reply with !date MM/DD/YYYY');
     }
     else if (command === "date") {
-        message.reply(`Your appointment is scheduled for ${command}`);
+        message.reply(`Your appointment is scheduled for ${args}`);
     }
   
  });
