@@ -3,21 +3,7 @@ import os
 import discord
 from discord.ext import commands
 
-# JSON load
-#def load_db():
-#    with open("db.json") as db:
-#        return json.load(db)
-    
-# Load database
-#db = load_db()
-
-# Bot declaration
 client = discord.Client()
-#bot = commands.Bot(command_prefix='$')
-
-#@bot.command()
-#async def test(ctx, arg):
-#    await ctx.send(arg) 
 
 @client.event
 async def on_ready():
@@ -32,7 +18,35 @@ async def on_message(message):
         await message.channel.send('Commands:')
     
     if message.content.startswith('!Appointment'):
-        await message.channel.send('Appointment Schedule')
+        cmd = message.content.split()
+        if(len(cmd) < 2 or len(cmd) > 2):
+            await message.channel.send('Invalid Appointment Schedule')
+            await message.channel.send('To make an appointment, please enter as !Appointment MM/DD/YYYY')
+            return
+        else:
+            date = cmd[1]
+            MonDayYear = date.split('/')
+            if(len(MonDayYear) != 3):
+                await message.channel.send('Invalid Date format. Enter as MM/DD/YYYY')
+                return
+            try:
+                Month = int(MonDayYear[0])
+                if(Month < 1 or Month > 12):
+                    await message.channel.send('Invalid Month. Month values can only by 1-12')
+                    return
+                Day = int(MonDayYear[1])
+                if(Day < 1 or Day > 31):
+                     await message.channel.send('Invalid Day. Day values can only by 1-31')
+                     return
+                Year = int(MonDayYear[2])
+                if(len(str(Year)) != 4):
+                    await message.channel.send('Invalid Year. Years are 4 digits long')
+                    return
+            except:
+                await message.channel.send('Invalid Date format. Enter as MM/DD/YYYY')
+                return
+            await message.channel.send('Appointment to be booked for:')
+            await message.channel.send(date)
+            
         
-client.run(db['token'])
-#bot.run(db["token"])
+client.run('ODIyMTYxMTIxMTAzMzE0OTU1.YFOPNg.zptOYcPu7DNikgmuKfchE3FymTU')
