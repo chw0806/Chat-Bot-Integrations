@@ -1,4 +1,3 @@
-import json
 import os
 import discord
 from discord.ext import commands
@@ -14,10 +13,11 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('!help'):
+    if message.content.lower().startswith('!help'):
         await message.channel.send('Commands:')
+        await message.channel.send('To book an appointment: !Appointment MM/DD/YYYY')
     
-    if message.content.startswith('!Appointment'):
+    if message.content.lower().startswith('!appointment'):
         cmd = message.content.split()
         if(len(cmd) < 2 or len(cmd) > 2):
             await message.channel.send('Invalid Appointment Schedule')
