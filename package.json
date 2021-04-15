@@ -11,11 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chrono-node": "^2.2.5",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "moment": "^2.29.1",
-    "spurwing": "^1.0.5"
+    "spurwing": "^1.0.6"
   }
 }
