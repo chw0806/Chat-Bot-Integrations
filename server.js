@@ -10,7 +10,7 @@ const moment = require('moment');
 
 const prefix = "!";
 
-
+require('dotenv')
 
  //event listeners based on client 
  client.on('ready', () => {
