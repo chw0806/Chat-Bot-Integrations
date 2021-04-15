@@ -3,7 +3,6 @@
  const client = new Discord.Client(); 
 
 const Spurwing = require('spurwing')
-const PID = '13498c08-3ce8-4141-b7ca-aa2e9bfd7181';
 let sp = new Spurwing();
 
 
