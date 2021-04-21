@@ -8,6 +8,7 @@ let sp = new Spurwing();
 
 const moment = require('moment');
 
+
 const prefix = "!";
 
 require('dotenv')
@@ -63,4 +64,3 @@ const chrono = require('chrono-node');
 
 
  
- client.login('ODIzNTUzMDg1MzQzMDA2NzYx.YFiflA.x7AIJekNmNb7jBqiM1vxb-DKCYI');
